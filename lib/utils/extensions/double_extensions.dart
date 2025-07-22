@@ -1,0 +1,2 @@
+extension DoubleExtensions on int{
+}
