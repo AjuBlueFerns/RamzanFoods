@@ -65,7 +65,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               }
             },
             child: Container(
-             padding: const EdgeInsets.all(defaultPadding / 4)+ EdgeInsets.symmetric(horizontal: 4),
+             padding: const EdgeInsets.all(defaultPadding / 4)+ const EdgeInsets.symmetric(horizontal: 4),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: blackColor80,
@@ -94,11 +94,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-        child: SingleChildScrollView(
+        child:SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const Padding(
+              // Padding(
               //   padding: EdgeInsets.symmetric(vertical: defaultPadding),
               //   child: SearchForm(),
               // ),
@@ -107,7 +107,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               //   "Categories",
               //   style: Theme.of(context).textTheme.titleSmall,
               // ),
-              // const SizedBox(height: defaultPadding / 2),
+              // SizedBox(height: defaultPadding / 2),
               // BlocBuilder<CategoryBloc, CategoryState>(
               //     builder: (context, state) {
               //   return Container(
@@ -196,12 +196,12 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               //     );
               //   },
               // ),
-              // const SizedBox(height: defaultPadding),
+              // SizedBox(height: defaultPadding),
               // Text(
               //   "Sub-Categories",
               //   style: Theme.of(context).textTheme.titleSmall,
               // ),
-              // const SizedBox(height: defaultPadding / 2),
+              // SizedBox(height: defaultPadding / 2),
               // BlocBuilder<SubcategoryBloc, SubcategoryState>(
               //   builder: (context, state) {
               //     return state.loading
@@ -213,7 +213,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               //   },
               // ),
               // SizedBox(height: defaultPadding / 2),
-
               // BlocBuilder<SubcategoryBloc, SubcategoryState>(
               //     builder: (context, state) {
               //   return state.loading
@@ -232,7 +231,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               //               ),
               //             )
               //           : const ProductGridview();
-              // })
+              // }),
+             
               ProductGridview(),
             ],
           ),

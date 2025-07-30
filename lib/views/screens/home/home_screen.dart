@@ -9,8 +9,6 @@ import 'package:crocurry/utils/locator.dart';
 import 'package:crocurry/utils/route/screen_export.dart';
 import 'package:crocurry/views/bloc/auth/auth_bloc.dart';
 import 'package:crocurry/views/bloc/auth/auth_event.dart';
-import 'package:crocurry/views/bloc/bookmark/bookmark_bloc.dart';
-import 'package:crocurry/views/bloc/bookmark/bookmark_event.dart';
 import 'package:crocurry/views/bloc/carousal/carousal_bloc.dart';
 import 'package:crocurry/views/bloc/carousal/carousal_event.dart';
 import 'package:crocurry/views/bloc/cart/cart_bloc.dart';
@@ -24,8 +22,6 @@ import 'package:crocurry/views/bloc/screen/screen_event.dart';
 import 'package:crocurry/views/bloc/screen/screen_state.dart';
 import 'package:crocurry/views/bloc/search/search_bloc.dart';
 import 'package:crocurry/views/bloc/search/search_event.dart';
-import 'package:crocurry/views/bloc/subcategories/subcategory_bloc.dart';
-import 'package:crocurry/views/bloc/subcategories/subcategory_event.dart';
 import 'package:crocurry/views/bloc/user/user_bloc.dart';
 import 'package:crocurry/views/screens/components/common_screen.dart';
 import 'package:crocurry/views/screens/home/views/components/cart_icon_widget.dart';
@@ -124,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/crocurry-logo-small.png',
+                      'assets/logo/app_logo.png',
                       width: 170.0,
                       height: 40.0,
                       fit: BoxFit.fitWidth,
@@ -159,6 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     // ),
                   ],
                 ),
+              
                 body: CommonScreen(
                   child: PageTransitionSwitcher(
                     duration: defaultDuration,

@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
       ],
       child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
         return MaterialApp(
+          navigatorKey: NavigationService.navigatorKey,
           debugShowCheckedModeBanner: false,
           title: 'Ramzan Foods',
           theme: AppTheme.lightTheme(context),
@@ -65,4 +66,8 @@ class MyApp extends StatelessWidget {
       }),
     );
   }
+}
+
+class NavigationService {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }

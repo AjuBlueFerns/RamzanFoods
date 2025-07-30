@@ -2,13 +2,14 @@ import 'package:crocurry/utils/common_functions.dart';
 import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:crocurry/utils/extensions/string_extensions.dart';
+import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_bloc.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_event.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_state.dart';
 import 'package:crocurry/views/bloc/filter/filter_bloc.dart';
 import 'package:crocurry/views/screens/components/common_loader.dart';
-import 'package:crocurry/views/screens/home/views/components/products/product_card.dart';
 import 'package:crocurry/views/screens/components/pagination_loader.dart';
+import 'package:crocurry/views/screens/home/views/components/products/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,12 +24,11 @@ class ProductGridview extends StatefulWidget {
 }
 
 class _ProductGridviewState extends State<ProductGridview> {
-  
   fetchProducts() async {
     var params = context.read<FilterBloc>().state.getParams();
     context.read<AllProductsBloc>().add(FetchAllProductsWithParams(
-      params: params,
-    ));
+          params: params,
+        ));
   }
 
   @override
@@ -45,7 +45,7 @@ class _ProductGridviewState extends State<ProductGridview> {
             //   "Products",
             //   style: Theme.of(context).textTheme.titleSmall,
             // ),
-           
+
             // if (state.products.isNotEmpty)
             //   const SizedBox(height: defaultPadding),
             state.products.isEmpty
@@ -64,16 +64,16 @@ class _ProductGridviewState extends State<ProductGridview> {
                         ),
                       )
                 : Expanded(
-                    child: GridView.builder(
-                        shrinkWrap: false,
+                    child: ListView.builder(
+                        shrinkWrap: true,
                         itemCount: state.products.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 200.0,
-                          mainAxisSpacing: defaultPadding,
-                          crossAxisSpacing: defaultPadding,
-                          childAspectRatio: 0.66,
-                        ),
+                        // gridDelegate:
+                        //     const SliverGridDelegateWithMaxCrossAxisExtent(
+                        //   maxCrossAxisExtent: 200.0,
+                        //   mainAxisSpacing: defaultPadding,
+                        //   crossAxisSpacing: defaultPadding,
+                        //   childAspectRatio: 0.66,
+                        // ),
                         itemBuilder: (context, index) {
                           var product = state.products[index];
                           if (product.productId == "loading") {

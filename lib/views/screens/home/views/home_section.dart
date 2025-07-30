@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:crocurry/views/screens/home/views/components/best_sellers.dart';
 import 'package:crocurry/views/screens/home/views/components/carousel_section.dart';
 import 'package:crocurry/views/screens/home/views/components/categories/categories_listview.dart';
+import 'package:crocurry/views/screens/home/views/components/flash_sale.dart';
+import 'package:crocurry/views/screens/home/views/components/most_popular.dart';
 import 'package:flutter/material.dart';
 import 'package:crocurry/utils/constants.dart';
-
-import 'components/best_sellers.dart';
-import 'components/flash_sale.dart';
-import 'components/most_popular.dart';
 import 'components/products/featured_products.dart';
 
 class HomeSection extends StatelessWidget {

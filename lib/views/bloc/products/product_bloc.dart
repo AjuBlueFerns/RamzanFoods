@@ -1,5 +1,4 @@
 import 'package:crocurry/data/models/product_model.dart';
-import 'package:crocurry/domain/use_cases/product/get_categories.dart';
 import 'package:crocurry/domain/use_cases/product/get_products.dart';
 import 'package:crocurry/utils/locator.dart';
 import 'package:crocurry/views/bloc/products/product_event.dart';
