@@ -1,4 +1,3 @@
-import 'package:crocurry/utils/common_dialogs/otp_dialog.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +46,7 @@ class OfferBanner extends StatelessWidget {
           child: CustomPaint(
             painter: DesignCardBanner(edgeColor, position, edgeSize),
             child: Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(radius),

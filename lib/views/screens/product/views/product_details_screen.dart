@@ -54,7 +54,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     if (!context.mounted) return;
     context.read<QuantityBloc>().add(
           SetUnitPriceAndQty(
-            qty: 1,
+            qty: widget.product.selectedQuantity,
             price: producDetails!.finalPrice!.toDouble(),
             stock: producDetails!.qtyInStock!.toInt(),
           ),
@@ -105,6 +105,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   ),
                   SizedBox(height: defaultPadding),
                   ProductInfo(
+                    productModel: widget.product,
                     brand: producDetails!.brandId!.toUpperCase(),
                     title: producDetails!.productName!,
                     isAvailable: widget.isProductAvailable,

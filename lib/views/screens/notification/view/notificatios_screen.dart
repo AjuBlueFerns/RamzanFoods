@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:crocurry/views/screens/components/buy_full_ui_kit.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -23,7 +22,7 @@ class NotificationsScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Text('No Notifications !'),
       ),
     );

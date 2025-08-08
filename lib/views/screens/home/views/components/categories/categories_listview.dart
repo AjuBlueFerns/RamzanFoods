@@ -1,6 +1,4 @@
 import 'package:crocurry/utils/constants.dart';
-import 'package:crocurry/views/bloc/all_products/all_products_bloc.dart';
-import 'package:crocurry/views/bloc/all_products/all_products_event.dart';
 import 'package:crocurry/views/bloc/categories/category_bloc.dart';
 import 'package:crocurry/views/bloc/categories/category_state.dart';
 import 'package:crocurry/views/bloc/filter/filter_bloc.dart';

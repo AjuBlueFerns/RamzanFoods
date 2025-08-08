@@ -1,5 +1,4 @@
 import 'package:crocurry/views/bloc/filter/filter_item.dart';
-import 'package:equatable/equatable.dart';
 
 class FilterState {
   final List<FilterType> filterTypes;

@@ -41,7 +41,7 @@ class ProductRemoteDataSourceImpl extends ProductRemoteDatasource {
     debugPrint(" url :$url");
     var params = {
       "key": 'get-articles',
-      'cid': "532",
+      'cid': "2",
     };
     var response =
         await http.get(Uri.parse(url).replace(queryParameters: params));

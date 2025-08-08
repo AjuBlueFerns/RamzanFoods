@@ -54,14 +54,17 @@ class MyApp extends StatelessWidget {
         BlocProvider<ValidatorBloc>(create: (_) => ValidatorBloc()),
       ],
       child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-        return MaterialApp(
-          navigatorKey: NavigationService.navigatorKey,
-          debugShowCheckedModeBanner: false,
-          title: 'Ramzan Foods',
-          theme: AppTheme.lightTheme(context),
-          themeMode: ThemeMode.light,
-          onGenerateRoute: router.generateRoute,
-          initialRoute: splashScreenRoute,
+        return GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: MaterialApp(
+            navigatorKey: NavigationService.navigatorKey,
+            debugShowCheckedModeBanner: false,
+            title: 'Ramzan Foods',
+            theme: AppTheme.lightTheme(context),
+            themeMode: ThemeMode.light,
+            onGenerateRoute: router.generateRoute,
+            initialRoute: splashScreenRoute,
+          ),
         );
       }),
     );

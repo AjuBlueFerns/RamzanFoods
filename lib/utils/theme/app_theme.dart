@@ -28,7 +28,7 @@ class AppTheme {
       appBarTheme: appBarLightTheme,
       scrollbarTheme: scrollbarThemeData,
       dataTableTheme: dataTableLightThemeData,
-      progressIndicatorTheme: ProgressIndicatorThemeData(
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: primaryColor,
       )
     );

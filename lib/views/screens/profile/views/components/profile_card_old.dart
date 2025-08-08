@@ -28,7 +28,7 @@ class ProfileCard extends StatelessWidget {
       leading:  CircleAvatar(
         radius: 28,
         backgroundColor: primaryColor.withOpacity(0.5),
-        child: Icon(
+        child: const Icon(
           Icons.person_2,
           size: 30,
         ),

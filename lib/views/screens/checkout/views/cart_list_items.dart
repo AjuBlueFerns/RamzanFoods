@@ -24,9 +24,9 @@ class CartListItems extends StatelessWidget {
     return ListView.separated(
       physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 0),
-          child: const Divider(
+        return const Padding(
+          padding: EdgeInsets.only(top: 0),
+          child: Divider(
             color: greyColor,
             indent: 0,
             endIndent: 0,
@@ -97,6 +97,7 @@ class CartListItems extends StatelessWidget {
                           await locator<UpdateQty>().call(item.cartId!,
                               item.productId!, item.cartItemNumber!, newQty);
                           if (context.mounted) {
+                          
                             context.read<CartBloc>().add(UpdateItemQty(
                                 item.productId!,
                                 newQty.toString(),

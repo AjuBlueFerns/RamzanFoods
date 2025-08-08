@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:crocurry/data/models/carousal_model.dart';
 import 'package:crocurry/utils/constants.dart';

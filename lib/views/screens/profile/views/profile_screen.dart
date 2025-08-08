@@ -1,8 +1,8 @@
 import 'package:crocurry/utils/common_dialogs/common_dialogs.dart';
-import 'package:crocurry/utils/common_dialogs/otp_dialog.dart';
 import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/custom_toast.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
+import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/utils/route/screen_export.dart';
 import 'package:crocurry/views/bloc/app_details/app_details_bloc.dart';
 import 'package:crocurry/views/bloc/app_details/app_details_state.dart';
@@ -13,11 +13,10 @@ import 'package:crocurry/views/bloc/bookmark/bookmark_bloc.dart';
 import 'package:crocurry/views/bloc/bookmark/bookmark_event.dart';
 import 'package:crocurry/views/bloc/orders/orders_bloc.dart';
 import 'package:crocurry/views/bloc/orders/orders_event.dart';
-import 'package:crocurry/views/bloc/screen/screen_bloc.dart';
-import 'package:crocurry/views/bloc/screen/screen_event.dart';
 import 'package:crocurry/views/bloc/user/user_bloc.dart';
 import 'package:crocurry/views/bloc/user/user_event.dart';
 import 'package:crocurry/views/bloc/user/user_state.dart';
+import 'package:crocurry/views/screens/auth/views/loginview.dart';
 import 'package:crocurry/views/screens/profile/views/components/log_in_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -275,15 +274,7 @@ class ProfileScreen extends StatelessWidget {
                         callBack: () async {
                           context.read<AuthBloc>().add(LogOut());
                           context.read<UserBloc>().add(ClearUserDetailsEvent());
-                          if (context.mounted) {
-                            context
-                                .read<ScreenBloc>()
-                                .add(UpdateScreenIndex(index: 0));
-                            Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                homeScreenRoute,
-                                (Route<dynamic> route) => false);
-                          }
+                          Helper.pushAndRemoveUntilRoute(const LoginView());
                         },
                       );
                     },

@@ -5,7 +5,6 @@ import 'package:crocurry/views/bloc/all_products/all_products_bloc.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_event.dart';
 import 'package:crocurry/views/bloc/filter/filter_bloc.dart';
 import 'package:crocurry/views/bloc/filter/filter_event.dart';
-import 'package:crocurry/views/bloc/filter/filter_state.dart';
 import 'package:crocurry/views/screens/discover/views/components/filters_app_bar.dart';
 import 'package:crocurry/views/screens/discover/views/components/product_gridview.dart';
 import 'package:flutter/material.dart';

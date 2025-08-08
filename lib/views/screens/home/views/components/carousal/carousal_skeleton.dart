@@ -1,9 +1,5 @@
-import 'package:crocurry/domain/use_cases/product/get_carousal.dart';
-import 'package:crocurry/views/bloc/carousal/carousal_bloc.dart';
-import 'package:crocurry/views/bloc/carousal/carousal_event.dart';
 import 'package:crocurry/views/screens/components/skleton/skelton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../utils/constants.dart';
 

@@ -1,5 +1,4 @@
 import 'package:crocurry/data/models/product_details_image_model.dart';
-import 'package:crocurry/views/screens/home/views/components/products/offer_percent_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_pinch_overlay/zoom_pinch_overlay.dart';
 import '../../../components/network_image_with_loader.dart';
@@ -115,7 +114,7 @@ class _ProductImagesState extends State<ProductImages> {
             ],
           ),
         ),
-        SizedBox(height: defaultPadding/2),
+        const SizedBox(height: defaultPadding/2),
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: defaultPadding * 0.75,

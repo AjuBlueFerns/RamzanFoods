@@ -1,8 +1,6 @@
 import 'package:crocurry/utils/common_functions.dart';
-import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:crocurry/utils/extensions/string_extensions.dart';
-import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_bloc.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_event.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_state.dart';
@@ -92,6 +90,7 @@ class _ProductGridviewState extends State<ProductGridview> {
                           //     : (discAmt) / (productPrice) * 100;
 
                           return ProductCard(
+                               productModel: product,
                             stock: product.qtyInStock!,
                             image: product.imagePath!,
                             brandName: product.mainCategory!,

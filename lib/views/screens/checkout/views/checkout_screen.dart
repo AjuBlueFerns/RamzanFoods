@@ -1,5 +1,4 @@
-import 'package:crocurry/utils/common_functions.dart';
-import 'package:crocurry/utils/extensions/context_extensions.dart';
+import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/views/screens/checkout/views/checkout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -28,18 +27,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             },
             onPageStarted: (String url) {},
             onPageFinished: (String url) async {
-              isLoading = false;
-              setState(() {});
-              debugPrint(" ## page finished $url");
-              if (url == "https://crocurry.com/store/cart/payment/success") {
-                await CommonFunctions.checkOrderStatus(context, widget.cartId,
-                    shouldPop: true);
-              }
-              if (url == "https://crocurry.com/store/cart/show-cart") {
-                if (context.mounted) {
-                  context.pop();
-                }
-              }
+              // setState(() {});
+              Helper.showLog(" ## page finished $url");
+              // if(url == "https://crocurry.com/store/docod/"){
+              //   Future.delayed(Duration(seconds: ))
+              //   Helper.pop();
+              // }
+              // if (url == "https://crocurry.com/store/cart/payment/success") {
+              //   await CommonFunctions.checkOrderStatus(context, widget.cartId,
+              //       shouldPop: true);
+              // }
+              // if (url == "https://crocurry.com/store/cart/show-cart") {
+              //   if (context.mounted) {
+              //     context.pop();
+              //   }
+              // }
             },
             onHttpError: (HttpResponseError error) {},
             onWebResourceError: (WebResourceError error) {},
@@ -51,7 +53,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             },
           ),
         )
-        ..loadRequest(Uri.parse(widget.url));
+        ..loadRequest(Uri.parse(widget.url)).then((value) => isLoading = false);
       setState(() {});
     });
 

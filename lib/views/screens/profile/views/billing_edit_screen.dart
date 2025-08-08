@@ -3,7 +3,6 @@ import 'package:crocurry/utils/common_functions.dart';
 import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/views/bloc/user/user_bloc.dart';
 import 'package:crocurry/views/bloc/user/user_state.dart';
-import 'package:crocurry/views/screens/components/common_btn.dart';
 import 'package:crocurry/views/screens/profile/views/components/update_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

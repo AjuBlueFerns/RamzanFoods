@@ -117,7 +117,7 @@ class CommonFunctions {
                 action: SnackBarAction(
                     label: 'View Cart',
                     onPressed: () {
-                      Navigator.pushNamed(context, cartScreenRoute,
+                      Navigator.pushReplacementNamed(context, cartScreenRoute,
                           arguments: true);
                     }),
                 context: context,
@@ -301,6 +301,7 @@ class CommonFunctions {
     required BuildContext context,
     required String mobileNum,
     VoidCallback? callback,
+    bool showControlls = true,
   }) async {
     FocusScope.of(context).unfocus();
     var isValid = validateMobileNumber(context: context, mobile: mobileNum);
@@ -311,6 +312,7 @@ class CommonFunctions {
           mobile: mobileNum,
           hash: testHash,
           callback: callback,
+          showControlls: showControlls,
         );
       } else {
         context.read<AuthBloc>().add(OtpLoading(true));
@@ -322,11 +324,11 @@ class CommonFunctions {
             context.read<AuthBloc>().add(OtpLoading(false));
             context.pop();
             CommonDialogs.showOtpDialog(
-              context: context,
-              mobile: mobileNum,
-              hash: hash,
-              callback: callback,
-            );
+                context: context,
+                mobile: mobileNum,
+                hash: hash,
+                callback: callback,
+                showControlls: false);
           }
         }
       }

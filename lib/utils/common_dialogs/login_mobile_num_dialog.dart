@@ -12,13 +12,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../views/bloc/auth/auth_bloc.dart';
 
 class LoginMobileNumDialog extends StatefulWidget {
-  const LoginMobileNumDialog({
-    super.key,
-    required this.title,
-    this.callback,
-  });
+  const LoginMobileNumDialog(
+      {super.key,
+      required this.title,
+      this.callback,
+      this.showControlls = true});
   final String title;
   final VoidCallback? callback;
+  final bool? showControlls;
 
   @override
   State<LoginMobileNumDialog> createState() => _LoginMobileNumDialogState();
@@ -49,43 +50,45 @@ class _LoginMobileNumDialogState extends State<LoginMobileNumDialog> {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             height: context.isKeyboardOpen ? context.bottomInsets + 315 : 400,
-            padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 28),
             width: double.infinity,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(
-                top: Radius.circular(defaultBorderRadius),
+                top: Radius.circular(18),
               ),
             ),
             child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: defaultPadding),
-                  Row(
-                    children: [
-                      Text(
-                        widget.title,
-                        style: const TextStyle(
-                          color: blackColor,
-                          fontSize: 16,
-                        ),
-                      ),
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: () {
-                          context.pop();
-                        },
-                        child: const Text(
-                          'Close',
-                          style: TextStyle(
+                  if (widget.showControlls!)
+                    const SizedBox(height: defaultPadding),
+                  if (widget.showControlls!)
+                    Row(
+                      children: [
+                        Text(
+                          widget.title,
+                          style: const TextStyle(
                             color: blackColor,
-                            fontSize: 14,
+                            fontSize: 16,
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                  const Divider(),
+                        const Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            context.pop();
+                          },
+                          child: const Text(
+                            'Close',
+                            style: TextStyle(
+                              color: blackColor,
+                              fontSize: 14,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  if (widget.showControlls!) const Divider(),
                   const Text(
                     "Continue with your mobile number.",
                     style: TextStyle(
@@ -174,6 +177,7 @@ class _LoginMobileNumDialogState extends State<LoginMobileNumDialog> {
                           context: context,
                           mobileNum: mobileNum,
                           callback: widget.callback,
+                          showControlls:false,
                         );
                       }
                     },

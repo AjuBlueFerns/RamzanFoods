@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:crocurry/views/screens/components/loading_shimmer.dart';
-import 'package:crocurry/views/screens/product/views/image_full_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:zoom_pinch_overlay/zoom_pinch_overlay.dart';
 
 import '../../../utils/constants.dart';
 import 'skleton/skelton.dart';
@@ -40,7 +38,7 @@ class NetworkImageWithLoader extends StatelessWidget {
           ),
         ),
         placeholder: (context, url) =>
-            LoadingShimmer(child: const Skeleton()),
+            const LoadingShimmer(child: Skeleton()),
         errorWidget: (context, url, error) => const Center(
           child: Icon(Icons.error),
         ),

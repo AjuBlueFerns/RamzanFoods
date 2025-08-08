@@ -38,7 +38,7 @@ class DividerListTile extends StatelessWidget {
                 : null,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         if (isShowDivider) const Divider(height: 1),
       ],
     );

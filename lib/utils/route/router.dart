@@ -1,4 +1,5 @@
 import 'package:crocurry/data/models/product_model.dart';
+import 'package:crocurry/views/screens/auth/views/loginview.dart';
 import 'package:crocurry/views/screens/checkout/views/checkout_screen.dart';
 import 'package:crocurry/views/screens/profile/views/address_listing_screen.dart';
 import 'package:crocurry/views/screens/profile/views/billing_edit_screen.dart';
@@ -82,6 +83,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const OnboardingScreen(),
       );
+
+    case loginView:
+      return MaterialPageRoute(
+        builder: (context) => const LoginView(),
+      );
     // case preferredLanuageScreenRoute:
     //   return MaterialPageRoute(
     //     builder: (context) => const PreferredLanguageScreen(),
@@ -89,7 +95,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     // case logInScreenRoute:
     //   return MaterialPageRoute(
     //     builder: (context) => const MobileInputScreen(),
-      // );
+    // );
     // case signUpScreenRoute:
     //   return MaterialPageRoute(
     //     builder: (context) => const SignUpScreen(),

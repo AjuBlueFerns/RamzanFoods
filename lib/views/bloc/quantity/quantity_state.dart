@@ -24,3 +24,5 @@ class QuantityState {
     return qty * unitPrice;
   }
 }
+
+class UIUpdateState extends QuantityState {}

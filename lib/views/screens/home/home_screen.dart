@@ -117,12 +117,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   leading: const SizedBox(),
                   leadingWidth: 0,
                   centerTitle: false,
-                  title: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
+                  toolbarHeight: 100,
+                  title: Padding(
+                    padding: const EdgeInsets.all(14),
                     child: Image.asset(
-                      'assets/logo/app_logo.png',
-                      width: 170.0,
-                      height: 40.0,
+                      'assets/logo/appbar_logo.jpg',
+                      width: 120.0,
                       fit: BoxFit.fitWidth,
                     ),
                   ),

@@ -83,11 +83,13 @@ final passwordValidator = MultiValidator([
 const pasNotMatchErrorText = "passwords do not match";
 
 /// api urls and endpoints
-const baseUrl = 'https://crocurry.com';
+// const baseUrl = 'https://crocurry.com';
+const baseUrl = 'https://ramzanfoods.blueferns.com';
 const detailsEndPoint = '/trendcart/api/ajax/ajax_api_handler.php';
 const mobileAppEndpoint = '/mobile_app/app_handler.php';
 const otpEndPoint = '/trendcart/site_user/checklogin_ot_app_v2.php';
-const checkoutEndPoint = '/trendcart/api/mobile_app/mobile_payment_landing.php';
+// const checkoutEndPoint = '/trendcart/api/mobile_app/mobile_payment_landing.php';
+const checkoutEndPoint = '/trendcart/api/mobile_app/mobile_cod_landing.php';
 
 /// List of product list in home screen
 const List<String> productSectionTitles = [

@@ -11,7 +11,10 @@ class SetUnitPriceAndQty extends QuantityEvent {
   });
 }
 
-class IncrementQty extends QuantityEvent {}
+class UpdateUI extends QuantityEvent{}
+
+class IncrementQty extends QuantityEvent {
+}
 
 class DecrementQty extends QuantityEvent {}
 

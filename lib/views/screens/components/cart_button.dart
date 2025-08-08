@@ -69,7 +69,7 @@ class _CartButtonState extends State<CartButton> {
                       addToCart(state.qty);
                     }
                   } else {
-                    Navigator.pushNamed(context, cartScreenRoute,
+                    Navigator.pushReplacementNamed(context, cartScreenRoute,
                         arguments: true);
                   }
                 } else {

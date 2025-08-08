@@ -1,9 +1,6 @@
 import 'package:crocurry/data/models/subcategory_model.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_bloc.dart';
 import 'package:crocurry/views/bloc/all_products/all_products_event.dart';
-import 'package:crocurry/views/bloc/categories/category_bloc.dart';
-import 'package:crocurry/views/bloc/products/product_bloc.dart';
-import 'package:crocurry/views/bloc/products/product_event.dart';
 import 'package:crocurry/views/bloc/subcategories/subcategory_bloc.dart';
 import 'package:crocurry/views/bloc/subcategories/subcategory_event.dart';
 import 'package:crocurry/views/screens/discover/views/components/subcategory_chip_item.dart';

@@ -31,6 +31,7 @@ class ProductModel {
   String? productSubCatId;
   String? ratingCount;
   String? userName;
+  int selectedQuantity;
 
   ProductModel({
     this.activeStatus,
@@ -59,6 +60,7 @@ class ProductModel {
     this.discountedPrice,
     this.offerDiscountPercent,
     this.userName,
+    this.selectedQuantity = 1,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {

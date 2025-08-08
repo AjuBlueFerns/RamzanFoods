@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:crocurry/utils/common_dialogs/otp_dialog.dart';
 import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:crocurry/views/screens/components/loading_shimmer.dart';
@@ -35,7 +34,7 @@ class ImageFullScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              placeholder: (context, url) => LoadingShimmer(child: const Skeleton()),
+              placeholder: (context, url) => const LoadingShimmer(child: Skeleton()),
               errorWidget: (context, url, error) => const Center(
                 child: Icon(Icons.error),
               ),

@@ -36,24 +36,24 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   checkAndNavigate(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
-      Helper.pushReplacement(homeScreenRoute);
+    Future.delayed(const Duration(seconds: 3), () async {
+      // Helper.pushReplacement(homeScreenRoute);
 
-      /// checks whether user is logged in form shared-prefs
-      // if (await locator<CheckLoggedIn>().call()) {
-      //   if (context.mounted) {
-      //     /// fetches user-details from shared-prefs and adds
-      //     /// to bloc state for easy ui updates
-      //     context.read<UserBloc>().add(FetchUserDetailsFromShared());
-      //     CustomToast.showSuccessMessage(
-      //         context: context, message: 'Login Success!');
-      //     Navigator.pushNamed(context, homeScreenRoute);
-      //   }
-      // } else {
-      //   if (context.mounted) {
-      //     Navigator.pushNamed(context, onbordingScreenRoute);
-      //   }
-      // }
+      //  checks whether user is logged in form shared-prefs
+      if (await locator<CheckLoggedIn>().call()) {
+        if (context.mounted) {
+          /// fetches user-details from shared-prefs and adds
+          /// to bloc state for easy ui updates
+          context.read<UserBloc>().add(FetchUserDetailsFromShared());
+          CustomToast.showSuccessMessage(
+              context: context, message: 'Login Success!');
+          Navigator.pushNamed(context, homeScreenRoute);
+        }
+      } else {
+        if (context.mounted) {
+          Navigator.pushNamed(context, loginView);
+        }
+      }
     });
   }
 

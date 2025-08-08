@@ -1,5 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:crocurry/data/models/category_model.dart';
 import 'package:crocurry/domain/use_cases/product/get_categories.dart';
 import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/locator.dart';
@@ -8,8 +6,6 @@ import 'package:crocurry/views/bloc/categories/category_event.dart';
 import 'package:crocurry/views/bloc/filter/filter_bloc.dart';
 import 'package:crocurry/views/bloc/filter/filter_event.dart';
 import 'package:crocurry/views/screens/components/loading_shimmer.dart';
-import 'package:crocurry/views/screens/components/network_image_with_loader.dart';
-import 'package:crocurry/views/screens/components/skleton/skelton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

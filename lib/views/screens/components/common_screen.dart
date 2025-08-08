@@ -184,7 +184,7 @@ class _CommonScreenState extends State<CommonScreen> {
                       //   // ),
                       // ],
                     ),
-                    body: Center(
+                    body: const Center(
                       child: Text("No Internet Connection"),
                     ),
                   );

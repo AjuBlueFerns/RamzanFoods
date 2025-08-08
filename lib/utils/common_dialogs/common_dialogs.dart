@@ -132,15 +132,18 @@ class CommonDialogs {
   static Future showLoginMobileNumberDialog({
     required BuildContext context,
     String title = "Login / Sign Up",
-    VoidCallback? callback,
+    VoidCallback? callback,  bool showControlls = true,
   }) async {
     return showModalBottomSheet(
+      barrierColor: showControlls ? Colors.white70 : Colors.transparent,
       isScrollControlled: true,
+      isDismissible: false,
       context: context,
       builder: (context) {
         return LoginMobileNumDialog(
           title: title,
           callback: callback,
+          showControlls: showControlls
         );
       },
     );
@@ -150,10 +153,12 @@ class CommonDialogs {
     required BuildContext context,
     required String mobile,
     required String hash,
-    VoidCallback? callback,
+    VoidCallback? callback,  bool showControlls = true,
   }) async {
     return showModalBottomSheet(
       isScrollControlled: true,
+      isDismissible: false,
+      barrierColor: showControlls ? Colors.white70: Colors.transparent,
       context: context,
       builder: (context) {
         return StatefulBuilder(builder: (context, setState) {
@@ -161,6 +166,7 @@ class CommonDialogs {
             mobile: mobile,
             hash: hash,
             callback: callback,
+            showControlls: showControlls
           );
         });
       },

@@ -1,4 +1,6 @@
+import 'package:crocurry/data/models/product_model.dart';
 import 'package:crocurry/utils/custom_toast.dart';
+import 'package:crocurry/utils/extensions/string_extensions.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_bloc.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_event.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_state.dart';
@@ -21,8 +23,10 @@ class ProductInfo extends StatelessWidget {
     required this.isAvailable,
     required this.price,
     required this.priceAfterDiscount,
+    required this.productModel,
   });
 
+  final ProductModel productModel;
   final String title, brand, description;
   final double rating, price, priceAfterDiscount;
   final int numOfReviews;
@@ -40,7 +44,6 @@ class ProductInfo extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: defaultPadding / 2),
-      
           Text(
             title,
             maxLines: 2,
@@ -49,6 +52,7 @@ class ProductInfo extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
               Expanded(
                 child: UnitPrice(
@@ -57,30 +61,38 @@ class ProductInfo extends StatelessWidget {
                 ),
               ),
               BlocBuilder<QuantityBloc, QuantityState>(
+                  // buildWhen: (previous, current) => current is UIUpdateState || current is DecrementQty || current is IncrementQty,
                   builder: (context, state) {
-                return ProductQuantity(
-                  numOfItem: state.qty,
-                  onIncrement: () {
-                    if (state.qty == state.stockQty) {
-                      CustomToast.showErrorMessage(
-                          context: context,
-                          message:
-                              'Only ${state.stockQty} item(s) available');
-                    } else {
-                      context.read<QuantityBloc>().add(IncrementQty());
-                    }
-                  },
-                  onDecrement: () {
-                    if (state.qty > 1) {
-                      context.read<QuantityBloc>().add(DecrementQty());
-                    }
-                  },
-                );
-              }),
+                    return ProductQuantity(
+                      numOfItem: productModel.selectedQuantity,
+                      onIncrement: () {
+                        if (productModel.selectedQuantity ==
+                            productModel.qtyInStock!.toInt()) {
+                          CustomToast.showErrorMessage(
+                              context: context,
+                              message:
+                                  'Only ${productModel.qtyInStock!} item(s) available');
+                        } else {
+                          if (productModel.qtyInStock!.toInt() >
+                              productModel.selectedQuantity) {
+                            productModel.selectedQuantity++;
+                            // context.read<QuantityBloc>().add(UpdateUI());
+                            context.read<QuantityBloc>().add(IncrementQty());
+                          }
+                        }
+                      },
+                      onDecrement: () {
+                        if (productModel.selectedQuantity > 1) {
+                          productModel.selectedQuantity--;
+                          // context.read<QuantityBloc>().add(UpdateUI());
+                          context.read<QuantityBloc>().add(DecrementQty());
+                        }
+                      },
+                    );
+                  }),
             ],
           ),
           const SizedBox(height: defaultPadding),
-      
           if (description.trim().isNotEmpty)
             Text(
               "Product info",
@@ -90,7 +102,6 @@ class ProductInfo extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.w500),
             ),
           const SizedBox(height: defaultPadding / 2),
-         
           if (description.trim().isNotEmpty)
             HtmlWidget(
               description,

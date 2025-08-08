@@ -59,13 +59,16 @@ class BestSellers extends StatelessWidget {
                               : 0,
                         ),
                         child: ProductCard(
+                          productModel: product,
                           image: product.imagePath!,
                           stock: product.qtyInStock!,
                           brandName: product.mainCategory!,
                           title: product.customTitle!,
-                        price: product.productMrp!.toDouble(),
-            priceAfterDiscount: product.discountedPrice!.toDouble(),
-            discountpercent: product.offerDiscountPercent!.toDouble(),
+                          price: product.productMrp!.toDouble(),
+                          priceAfterDiscount:
+                              product.discountedPrice!.toDouble(),
+                          discountpercent:
+                              product.offerDiscountPercent!.toDouble(),
                           press: () async {
                             // var response = await locator<ViewCart>().call();
                             // if (context.mounted) {

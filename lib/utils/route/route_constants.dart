@@ -65,3 +65,6 @@ const String billingEditScreenRoute = "editBilling";
 const String shippingEditScreenRoute = "editShipping";
 const String addressListingScreenRoute = "addressListing";
 const String webViewScreenRoute = "webView";
+//
+const String loginView = "loginView";
+// LoginView

@@ -9,7 +9,7 @@ class CommonLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: SizedBox(
         // height: height,
         child: CircularProgressIndicator(),

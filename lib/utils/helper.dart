@@ -23,6 +23,15 @@ class Helper {
 
   static push(dynamic route) => Navigator.push(context!, route);
 
-  static pushReplacement(dynamic route) =>
+  static pushReplacementNamedRoute(dynamic route) =>
       Navigator.pushReplacementNamed(context!, route);
+
+  static pushAndRemoveUntilRoute(dynamic route) =>
+      Navigator.of(context!).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => route,
+          ),
+          (Route<dynamic> route) => false);
+
+  static void pop() => Navigator.pop(context!);
 }

@@ -29,10 +29,12 @@ class OtpDialog extends StatefulWidget {
     required this.mobile,
     required this.hash,
     this.callback,
+    this.showControlls = true,
   });
   final String mobile;
   final String hash;
   final VoidCallback? callback;
+  final bool? showControlls;
 
   @override
   State<OtpDialog> createState() => _OtpDialogState();
@@ -71,11 +73,11 @@ class _OtpDialogState extends State<OtpDialog> {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             height: context.isKeyboardOpen ? context.bottomInsets + 315 : 400,
-            padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 28),
             width: double.infinity,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(
-                top: Radius.circular(defaultBorderRadius),
+                top: Radius.circular(18),
               ),
             ),
             child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
@@ -84,31 +86,32 @@ class _OtpDialogState extends State<OtpDialog> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        const Text(
-                          'OTP Verification',
-                          style: TextStyle(
-                            color: blackColor,
-                            fontSize: 16,
-                          ),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            context.pop();
-                          },
-                          child: const Text(
-                            'Close',
+                    if (widget.showControlls!)
+                      Row(
+                        children: [
+                          const Text(
+                            'OTP Verification',
                             style: TextStyle(
                               color: blackColor,
-                              fontSize: 14,
+                              fontSize: 16,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    const Divider(),
+                          const Spacer(),
+                          GestureDetector(
+                            onTap: () {
+                              context.pop();
+                            },
+                            child: const Text(
+                              'Close',
+                              style: TextStyle(
+                                color: blackColor,
+                                fontSize: 14,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    if (widget.showControlls!) const Divider(),
                     Text(
                       "We have sent OTP to ${widget.mobile}.",
                       style: const TextStyle(
@@ -207,9 +210,7 @@ class _OtpDialogState extends State<OtpDialog> {
     FocusScope.of(context).unfocus();
     _formKey.currentState!.save();
     if (CommonFunctions.validateOTP(context: context, otp: code)) {
-      if(widget.mobile==testPhoneNumber){
-        
-      }
+      if (widget.mobile == testPhoneNumber) {}
       context.read<AuthBloc>().add(OtpVerifying(true));
       await locator<VerifyOtp>()
           .call(widget.mobile, code, hash)

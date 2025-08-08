@@ -2,7 +2,6 @@ import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:crocurry/views/bloc/user/user_bloc.dart';
 import 'package:crocurry/views/bloc/user/user_state.dart';
-import 'package:crocurry/views/screens/profile/views/profile_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,9 +44,9 @@ class AddressListingScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             backgroundColor: context.primaryColor.withOpacity(0.4),
-                            child: Icon(Icons.location_pin),
+                            child: const Icon(Icons.location_pin),
                           ),
-                          SizedBox(width: defaultPadding),
+                          const SizedBox(width: defaultPadding),
                           const Text(
                             'Billing',
                             style: TextStyle(
@@ -66,7 +65,7 @@ class AddressListingScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: defaultPadding),
+                const SizedBox(height: defaultPadding),
                 Container(
                   padding: const EdgeInsets.all(defaultPadding),
                   decoration: BoxDecoration(
@@ -83,9 +82,9 @@ class AddressListingScreen extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             backgroundColor: context.primaryColor.withOpacity(0.4),
-                            child: Icon(Icons.location_pin),
+                            child: const Icon(Icons.location_pin),
                           ),
-                          SizedBox(width: defaultPadding),
+                          const SizedBox(width: defaultPadding),
                           const Text(
                             'Shipping',
                             style: TextStyle(

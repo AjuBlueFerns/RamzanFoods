@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:crocurry/views/bloc/quantity/quantity_event.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,10 +10,12 @@ class QuantityBloc extends Bloc<QuantityEvent, QuantityState> {
     on(decrementQty);
     on(setPrice);
     on(addingCartStatus);
+    on<UpdateUI>(updateUI);
   }
 
   Future setPrice(SetUnitPriceAndQty event, Emitter<QuantityState> emit) async {
-    emit(state.copyWith(price: event.price, quantity: event.qty, stock: event.stock));
+    emit(state.copyWith(
+        price: event.price, quantity: event.qty, stock: event.stock));
   }
 
   Future<void> incrementQty(
@@ -27,5 +31,9 @@ class QuantityBloc extends Bloc<QuantityEvent, QuantityState> {
   Future<void> addingCartStatus(
       AddingCartStatus event, Emitter<QuantityState> emit) async {
     emit(state.copyWith(adding: event.status));
+  }
+
+  FutureOr<void> updateUI(UpdateUI event, Emitter<QuantityState> emit) async {
+    emit(UIUpdateState());
   }
 }

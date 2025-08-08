@@ -67,7 +67,7 @@ class CartSummary extends StatelessWidget {
                         const Text('Delivery Charges'),
                         const Spacer(),
                         if (cart.shippingCharges == "0.00")
-                          Text('Free')
+                          const Text('Free')
                         else
                           Text(cart.shippingCharges.appendRuppeeSymbol)
                       ],
@@ -85,7 +85,7 @@ class CartSummary extends StatelessWidget {
                         const Spacer(),
                         Text(
                           cart.discTotal.appendRuppeeSymbol,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: redColor,
                           ),
                         )

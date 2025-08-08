@@ -68,6 +68,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             debugPrint(
                                 " ## productName : ${product.productName}");
                             return ProductCard(
+                              productModel: product,
                               stock: product.qtyInStock!,
                               image: product.imagePath!,
                               brandName: product.mainCategory!,

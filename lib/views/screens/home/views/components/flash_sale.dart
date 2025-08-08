@@ -51,6 +51,7 @@ class FlashSale extends StatelessWidget {
                               : 0,
                         ),
                         child: ProductCard(
+                          productModel: product,
                           stock: product.qtyInStock!,
                           image: product.imagePath!,
                           brandName: product.mainCategory!,

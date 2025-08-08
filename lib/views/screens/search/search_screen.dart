@@ -140,6 +140,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       }
 
                       return ProductCard(
+                        productModel: product,
                         stock: product.qtyInStock!,
                         image: product.imagePath!,
                         brandName: product.mainCategory!,
