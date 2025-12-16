@@ -206,7 +206,7 @@ class _OtpDialogState extends State<OtpDialog> {
     );
   }
 
-  verifyAndNavigate(BuildContext context) async {
+  Future<void> verifyAndNavigate(BuildContext context) async {
     FocusScope.of(context).unfocus();
     _formKey.currentState!.save();
     if (CommonFunctions.validateOTP(context: context, otp: code)) {

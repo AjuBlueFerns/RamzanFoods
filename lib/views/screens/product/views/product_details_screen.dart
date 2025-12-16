@@ -47,14 +47,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     super.initState();
   }
 
-  updateQuantity(BuildContext context) async {
+  Future<void> updateQuantity(BuildContext context) async {
     var result =
         await locator<GetProductDetails>().call(widget.product.productId!);
     producDetails = result.$1;
     if (!context.mounted) return;
     context.read<QuantityBloc>().add(
           SetUnitPriceAndQty(
-            qty: widget.product.selectedQuantity,
+            qty: widget.product.quantityInCart,
             price: producDetails!.finalPrice!.toDouble(),
             stock: producDetails!.qtyInStock!.toInt(),
           ),
@@ -67,6 +67,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       bottomNavigationBar: CartButton(
         producDetails: producDetails,
+         productModel: widget.product,
       ),
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,

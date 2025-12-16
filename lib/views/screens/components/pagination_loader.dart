@@ -27,7 +27,7 @@ class _PaginationLoaderState extends State<PaginationLoader> {
     super.initState();
   }
 
-  fetchProducts(BuildContext context) async {
+  Future<void> fetchProducts(BuildContext context) async {
     if (context.mounted) {
       if (widget.callApi) {
         widget.apiCall.call();

@@ -8,7 +8,7 @@ class StoreProvider {
     // _store = Store(getObjectBoxModel());
   }
 
-  updateStore(String? directory) {
+  void updateStore(String? directory) {
     _store = Store(
       getObjectBoxModel(),
       directory: directory,

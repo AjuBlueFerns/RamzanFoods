@@ -19,8 +19,10 @@ import 'package:crocurry/views/bloc/search/search_bloc.dart';
 import 'package:crocurry/views/bloc/subcategories/subcategory_bloc.dart';
 import 'package:crocurry/views/bloc/user/user_bloc.dart';
 import 'package:crocurry/views/bloc/validator/validator_bloc.dart';
+import 'package:crocurry/views/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,39 +36,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return MultiProvider(
       providers: [
-        BlocProvider<CarousalBloc>(create: (_) => CarousalBloc()),
-        BlocProvider<CategoryBloc>(create: (_) => CategoryBloc()),
-        BlocProvider<SubcategoryBloc>(create: (_) => SubcategoryBloc()),
-        BlocProvider<ProductBloc>(create: (_) => ProductBloc()),
-        BlocProvider<AllProductsBloc>(create: (_) => AllProductsBloc()),
-        BlocProvider<ScreenBloc>(create: (_) => ScreenBloc()),
-        BlocProvider<AuthBloc>(create: (_) => AuthBloc()),
-        BlocProvider<QuantityBloc>(create: (_) => QuantityBloc()),
-        BlocProvider<CartBloc>(create: (_) => CartBloc()),
-        BlocProvider<UserBloc>(create: (_) => UserBloc()),
-        BlocProvider<SearchBloc>(create: (_) => SearchBloc()),
-        BlocProvider<BookmarkBloc>(create: (_) => BookmarkBloc()),
-        BlocProvider<OrdersBloc>(create: (_) => OrdersBloc()),
-        BlocProvider<FilterBloc>(create: (_) => FilterBloc()),
-        BlocProvider<AppDetailsBloc>(create: (_) => AppDetailsBloc()),
-        BlocProvider<ValidatorBloc>(create: (_) => ValidatorBloc()),
+        ChangeNotifierProvider<CartProvider>(
+          create: (context) => CartProvider(),
+        )
       ],
-      child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-        return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: MaterialApp(
-            navigatorKey: NavigationService.navigatorKey,
-            debugShowCheckedModeBanner: false,
-            title: 'Ramzan Foods',
-            theme: AppTheme.lightTheme(context),
-            themeMode: ThemeMode.light,
-            onGenerateRoute: router.generateRoute,
-            initialRoute: splashScreenRoute,
-          ),
-        );
-      }),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<CarousalBloc>(create: (_) => CarousalBloc()),
+          BlocProvider<CategoryBloc>(create: (_) => CategoryBloc()),
+          BlocProvider<SubcategoryBloc>(create: (_) => SubcategoryBloc()),
+          BlocProvider<ProductBloc>(create: (_) => ProductBloc()),
+          BlocProvider<AllProductsBloc>(create: (_) => AllProductsBloc()),
+          BlocProvider<ScreenBloc>(create: (_) => ScreenBloc()),
+          BlocProvider<AuthBloc>(create: (_) => AuthBloc()),
+          BlocProvider<QuantityBloc>(create: (_) => QuantityBloc()),
+          BlocProvider<CartBloc>(create: (_) => CartBloc()),
+          BlocProvider<UserBloc>(create: (_) => UserBloc()),
+          BlocProvider<SearchBloc>(create: (_) => SearchBloc()),
+          BlocProvider<BookmarkBloc>(create: (_) => BookmarkBloc()),
+          BlocProvider<OrdersBloc>(create: (_) => OrdersBloc()),
+          BlocProvider<FilterBloc>(create: (_) => FilterBloc()),
+          BlocProvider<AppDetailsBloc>(create: (_) => AppDetailsBloc()),
+          BlocProvider<ValidatorBloc>(create: (_) => ValidatorBloc()),
+        ],
+        child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
+          return GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: MaterialApp(
+              navigatorKey: NavigationService.navigatorKey,
+              debugShowCheckedModeBanner: false,
+              title: 'Ramzan Foods',
+              theme: AppTheme.lightTheme(context),
+              themeMode: ThemeMode.light,
+              onGenerateRoute: router.generateRoute,
+              initialRoute: splashScreenRoute,
+            ),
+          );
+        }),
+      ),
     );
   }
 }

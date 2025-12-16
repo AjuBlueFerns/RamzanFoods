@@ -61,7 +61,7 @@ class CustomToast {
     // );
   }
 
-  static showDefaultToast({
+  static void showDefaultToast({
     required BuildContext context,
     required String message,
     SnackBarAction? action,

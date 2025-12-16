@@ -31,7 +31,10 @@ class ProductModel {
   String? productSubCatId;
   String? ratingCount;
   String? userName;
-  int selectedQuantity;
+  // int selectedQuantity;
+  String? cartItemNumber;
+  int quantityInCart;
+  bool isInCart;
 
   ProductModel({
     this.activeStatus,
@@ -60,7 +63,10 @@ class ProductModel {
     this.discountedPrice,
     this.offerDiscountPercent,
     this.userName,
-    this.selectedQuantity = 1,
+    // this.selectedQuantity = 0,
+    this.isInCart = false,
+    this.cartItemNumber,
+    this.quantityInCart = 0,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -80,6 +86,9 @@ class ProductModel {
     // }
 
     return ProductModel(
+      quantityInCart: json['quantity_in_cart'] ?? 0,
+      isInCart: (json['quantity_in_cart'] ?? 0) > 0,
+      cartItemNumber: json['cartItemNumber'] ?? "",
       activeStatus: json['active_status'] ?? "",
       brandId: json['brand_id'] ?? "",
       categoryId: json['cat_id'] ?? "",

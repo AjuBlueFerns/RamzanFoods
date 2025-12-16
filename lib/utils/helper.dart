@@ -21,12 +21,12 @@ class Helper {
 
   static void showLog(String message) => log(message);
 
-  static push(dynamic route) => Navigator.push(context!, route);
+  static Future<Object?> push(dynamic route) => Navigator.push(context!, route);
 
-  static pushReplacementNamedRoute(dynamic route) =>
+  static Future<Object?> pushReplacementNamedRoute(dynamic route) =>
       Navigator.pushReplacementNamed(context!, route);
 
-  static pushAndRemoveUntilRoute(dynamic route) =>
+  static Future pushAndRemoveUntilRoute(dynamic route) =>
       Navigator.of(context!).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (context) => route,
@@ -34,4 +34,14 @@ class Helper {
           (Route<dynamic> route) => false);
 
   static void pop() => Navigator.pop(context!);
+
+  static void showSnack({required String message, Color? bgColor}) =>
+      ScaffoldMessenger.of(context!)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            content: Text(message),
+            backgroundColor: Colors.black,
+          ),
+        );
 }

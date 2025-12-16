@@ -28,7 +28,7 @@ class _WishlistIconState extends State<WishlistIcon> {
   ProductModel? bookmarkedProduct;
   bool isLoading = true;
 
-  getBookmarkedProduct(BuildContext context) {
+  void getBookmarkedProduct(BuildContext context) {
     if (context.read<AuthBloc>().state.isLoggedIn) {
       var userName = context.read<UserBloc>().state.user!.userName!;
       bookmarkedProduct = locator<CheckIfProductBookmarked>()

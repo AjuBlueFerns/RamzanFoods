@@ -31,11 +31,11 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
   }
 
-  initVersionDetails() async {
+  Future<void> initVersionDetails() async {
     context.read<AppDetailsBloc>().add(InitAppDetailsEvent());
   }
 
-  checkAndNavigate(BuildContext context) {
+  void checkAndNavigate(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () async {
       // Helper.pushReplacement(homeScreenRoute);
 

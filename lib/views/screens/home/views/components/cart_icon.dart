@@ -25,7 +25,7 @@ class _CartIconState extends State<CartIcon> {
     super.initState();
   }
 
-  updateCount() {
+  void updateCount() {
     cartCount = widget.count;
     setState(() {});
   }

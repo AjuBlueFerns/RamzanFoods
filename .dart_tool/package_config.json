@@ -3,21 +3,21 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-85.0.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-91.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.9"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/analyzer-7.7.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/analyzer-8.4.1",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.9"
     },
     {
       "name": "animations",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/animations-2.0.11",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/animations-2.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.8"
     },
     {
       "name": "archive",
@@ -39,9 +39,9 @@
     },
     {
       "name": "bloc",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/bloc-8.1.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/bloc-9.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "boolean_selector",
@@ -51,37 +51,37 @@
     },
     {
       "name": "build",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build-2.5.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build-3.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "build_config",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_config-1.1.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_config-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_daemon-4.0.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_daemon-4.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_resolvers",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_resolvers-2.5.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_resolvers-3.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_runner-2.5.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_runner-2.7.1",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_runner_core-9.1.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/build_runner_core-9.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -93,7 +93,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/built_value-8.11.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/built_value-8.12.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -114,6 +114,12 @@
       "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/cached_network_image_web-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "change_app_package_name",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/change_app_package_name-1.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "characters",
@@ -141,9 +147,9 @@
     },
     {
       "name": "code_builder",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/code_builder-4.10.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/code_builder-4.11.0",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "collection",
@@ -153,7 +159,7 @@
     },
     {
       "name": "connectivity_plus",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/connectivity_plus-6.1.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/connectivity_plus-7.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -171,7 +177,7 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/crypto-3.0.6",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/crypto-3.0.7",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -189,9 +195,9 @@
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/dart_style-3.1.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/dart_style-3.1.3",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.9"
     },
     {
       "name": "dbus",
@@ -201,7 +207,7 @@
     },
     {
       "name": "dependency_validator",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/dependency_validator-5.0.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/dependency_validator-5.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -245,13 +251,13 @@
       "name": "flutter",
       "rootUri": "file:///Users/flutterdev2/development/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_bloc",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.6",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_bloc-9.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "flutter_cache_manager",
@@ -261,15 +267,15 @@
     },
     {
       "name": "flutter_launcher_icons",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.14.4",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_lints-6.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_rating_bar",
@@ -279,27 +285,27 @@
     },
     {
       "name": "flutter_svg",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_svg-2.2.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_svg-2.2.3",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_test",
       "rootUri": "file:///Users/flutterdev2/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/flutterdev2/development/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_widget_from_html_core",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_widget_from_html_core-0.15.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/flutter_widget_from_html_core-0.17.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "form_field_validator",
@@ -315,7 +321,7 @@
     },
     {
       "name": "get_it",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/get_it-7.7.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/get_it-8.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -339,7 +345,7 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/http-1.4.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/http-1.6.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -357,7 +363,7 @@
     },
     {
       "name": "image",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/image-4.5.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/image-4.6.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -374,12 +380,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "js",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/js-0.7.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.7"
-    },
-    {
       "name": "json_annotation",
       "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/json_annotation-4.9.0",
       "packageUri": "lib/",
@@ -387,31 +387,31 @@
     },
     {
       "name": "leak_tracker",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker-10.0.9",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker-11.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_flutter_testing",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.9",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.10",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_testing",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/leak_tracker_testing-3.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/lints-4.0.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/lints-6.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.8"
     },
     {
       "name": "logger",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/logger-2.6.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/logger-2.6.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -423,9 +423,9 @@
     },
     {
       "name": "lottie",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/lottie-3.3.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/lottie-3.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "matcher",
@@ -465,21 +465,21 @@
     },
     {
       "name": "objectbox",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox-4.3.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox-4.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "objectbox_flutter_libs",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox_flutter_libs-4.3.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox_flutter_libs-4.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "objectbox_generator",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox_generator-4.3.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/objectbox_generator-4.3.1",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "octo_image",
@@ -495,13 +495,13 @@
     },
     {
       "name": "package_info_plus",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/package_info_plus-8.3.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/package_info_plus-9.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "package_info_plus_platform_interface",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/package_info_plus_platform_interface-3.2.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/package_info_plus_platform_interface-3.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -525,15 +525,15 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/path_provider_android-2.2.17",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/path_provider_android-2.2.22",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/path_provider_foundation-2.5.1",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.9"
     },
     {
       "name": "path_provider_linux",
@@ -555,9 +555,9 @@
     },
     {
       "name": "petitparser",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/petitparser-6.1.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/petitparser-7.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.8"
     },
     {
       "name": "platform",
@@ -579,9 +579,9 @@
     },
     {
       "name": "pool",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/pool-1.5.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/pool-1.5.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "posix",
@@ -591,7 +591,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/provider-6.1.5",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/provider-6.1.5+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -621,21 +621,21 @@
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences-2.5.3",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences-2.5.4",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.9"
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.10",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.18",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.6",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.9"
     },
     {
       "name": "shared_preferences_linux",
@@ -683,25 +683,19 @@
       "name": "sky_engine",
       "rootUri": "file:///Users/flutterdev2/development/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/source_gen-2.0.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/source_gen-3.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "source_span",
       "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/source_span-1.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
-    },
-    {
-      "name": "sprintf",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/sprintf-7.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "sqflite",
@@ -711,15 +705,15 @@
     },
     {
       "name": "sqflite_android",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/sqflite_android-2.4.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/sqflite_android-2.4.2+2",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.9"
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/sqflite_common-2.5.5",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/sqflite_common-2.5.6",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "sqflite_darwin",
@@ -771,7 +765,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/test_api-0.7.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/test_api-0.7.6",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -795,27 +789,27 @@
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.16",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.28",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.3",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.6",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.9"
     },
     {
       "name": "url_launcher_linux",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_linux-3.2.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_linux-3.2.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.8"
     },
     {
       "name": "url_launcher_macos",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_macos-3.2.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_macos-3.2.5",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.9"
     },
     {
       "name": "url_launcher_platform_interface",
@@ -831,13 +825,13 @@
     },
     {
       "name": "url_launcher_windows",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.5",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.8"
     },
     {
       "name": "uuid",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/uuid-4.5.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/uuid-4.5.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -855,27 +849,27 @@
     },
     {
       "name": "vector_graphics_compiler",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.17",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.19",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "vector_math",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vector_math-2.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.1"
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vm_service-15.0.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/vm_service-15.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "watcher",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/watcher-1.1.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/watcher-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.4"
     },
     {
       "name": "web",
@@ -903,25 +897,25 @@
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_android-4.8.2",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_android-4.10.11",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "webview_flutter_platform_interface",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-2.13.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-2.14.0",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.22.1",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.23.5",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/win32-5.14.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/win32-5.15.0",
       "packageUri": "lib/",
       "languageVersion": "3.8"
     },
@@ -933,9 +927,9 @@
     },
     {
       "name": "xml",
-      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/xml-6.5.0",
+      "rootUri": "file:///Users/flutterdev2/.pub-cache/hosted/pub.dev/xml-6.6.1",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.8"
     },
     {
       "name": "yaml",
@@ -957,8 +951,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.8.1",
+  "generatorVersion": "3.9.2",
   "flutterRoot": "file:///Users/flutterdev2/development/flutter",
-  "flutterVersion": "3.32.8",
+  "flutterVersion": "3.35.7",
   "pubCache": "file:///Users/flutterdev2/.pub-cache"
 }

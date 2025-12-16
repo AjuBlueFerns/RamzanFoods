@@ -2,9 +2,9 @@
 
 import 'package:crocurry/views/screens/home/views/components/carousel_section.dart';
 import 'package:crocurry/views/screens/home/views/components/categories/categories_listview.dart';
+import 'package:crocurry/views/screens/home/views/components/products/featured_products.dart';
 import 'package:flutter/material.dart';
 import 'package:crocurry/utils/constants.dart';
-import 'components/products/featured_products.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});

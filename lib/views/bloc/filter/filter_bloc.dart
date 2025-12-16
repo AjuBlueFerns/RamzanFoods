@@ -33,7 +33,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     on(updateSelectedFiltersEvent);
   }
 
-  initCategory(InitCategoryFilter event, Emitter<FilterState> emit) async {
+  Future<void> initCategory(InitCategoryFilter event, Emitter<FilterState> emit) async {
     // final details = await locator<GetProductCategories>().call();
     var filterList = state.filterTypes;
     // var categoryList = details.$1 ?? [];
@@ -50,7 +50,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     emit(state.copyWith(types: filterList));
   }
 
-  updateIndex(UpdateFilterIndex event, Emitter<FilterState> emit) async {
+  Future<void> updateIndex(UpdateFilterIndex event, Emitter<FilterState> emit) async {
     var types = state.filterTypes;
     if (event.index == 1) {
       types[1].isLoading = true;
@@ -105,7 +105,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     emit(state.copyWith(index: event.index));
   }
 
-  updateList(UpdateFilterList event, Emitter<FilterState> emit) async {
+  Future<void> updateList(UpdateFilterList event, Emitter<FilterState> emit) async {
     var types = state.filterTypes;
     // var types1 = state.selectedFilters;
 
@@ -128,7 +128,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     }
   }
 
-  updateFilterListIndex(
+  Future<void> updateFilterListIndex(
       UpdateFilterListIndex event, Emitter<FilterState> emit) async {
     var types = state.filterTypes;
     // var types1 = state.selectedFilters;
@@ -149,7 +149,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
   //   emit(state.copyWith(displayList: event.list));
   // }
 
-  clearFiltersEvent(ClearFiltersEvent event, Emitter<FilterState> emit) async {
+  Future<void> clearFiltersEvent(ClearFiltersEvent event, Emitter<FilterState> emit) async {
     var list = state.filterTypes;
     for (var i in list) {
       i.selectedIndex = -1;
@@ -157,7 +157,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     emit(state.copyWith(types: list));
   }
 
-  removeFilterEvent(RemoveFilterEvent event, Emitter<FilterState> emit) async {
+  Future<void> removeFilterEvent(RemoveFilterEvent event, Emitter<FilterState> emit) async {
     var list = state.filterTypes;
 
     var index = list.indexWhere((filter) => filter.name == event.filter.name);
@@ -170,7 +170,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     emit(state.copyWith(types: list, selected: selected));
   }
 
-  updateSelectedFiltersEvent(
+  Future<void> updateSelectedFiltersEvent(
       UpdateSelectedFiltersEvent event, Emitter<FilterState> emit) async {
     var list = state.getAppliedFilterTypes()
         .map((filter) => SelectedFilterType(

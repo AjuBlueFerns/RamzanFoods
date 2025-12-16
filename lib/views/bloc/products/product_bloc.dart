@@ -1,8 +1,10 @@
 import 'package:crocurry/data/models/product_model.dart';
 import 'package:crocurry/domain/use_cases/product/get_products.dart';
+import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/utils/locator.dart';
 import 'package:crocurry/views/bloc/products/product_event.dart';
 import 'package:crocurry/views/bloc/products/product_state.dart';
+import 'package:crocurry/views/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,6 +42,9 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     if (event.filterKey != null) {
       params.addAll({'filterKey': event.filterKey!});
     }
+    if(event.cartId != null){
+        params.addAll({'cartId': event.cartId!});
+    }
     
     final details = await locator<GetProducts>()
         .call(params, event.pageSize, event.pageNumber!);
@@ -53,6 +58,8 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       // debugPrint(
       //     " @@ products friendlyName :: ${updatedProductLists[index].first.friendlyName!}");
     }
+
+    Helper.context!.read<CartProvider>().initializeProductData(data: updatedProductLists);
 
     emit(state.copyWith(
       isLoading: updatedLoadingList,

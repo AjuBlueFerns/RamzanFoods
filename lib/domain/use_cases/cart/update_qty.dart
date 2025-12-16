@@ -5,12 +5,11 @@ class UpdateQty {
   UpdateQty(this.repository);
 
   Future call(
-    String cartId,
+    // String cartId,
     String productId,
     String cartItemNumber,
     int newQty,
   ) async {
-    return await repository.updateQtyInCart(
-        cartId, productId, cartItemNumber, newQty);
+    return await repository.updateQtyInCart(productId, cartItemNumber, newQty);
   }
 }

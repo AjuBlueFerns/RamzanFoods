@@ -26,7 +26,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
     super.initState();
   }
 
-  getProducts(BuildContext context) async {
+  Future<void> getProducts(BuildContext context) async {
     var filterBloc = context.read<FilterBloc>();
 
     // var filters = filterBloc.state.getAppliedFilters();

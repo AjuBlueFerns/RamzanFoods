@@ -27,7 +27,7 @@ class _CategorySkeletonState extends State<CategorySkeleton> {
     super.initState();
   }
 
-  updateCategories(BuildContext context) async {
+  Future<void> updateCategories(BuildContext context) async {
     final details = await locator<GetProductCategories>().call();
     var list = details.$1 ?? [];
     if (context.mounted) {

@@ -4,6 +4,7 @@ import 'package:crocurry/utils/extensions/string_extensions.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_bloc.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_event.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_state.dart';
+import 'package:crocurry/views/provider/cart_provider.dart';
 import 'package:crocurry/views/screens/product/views/components/product_quantity.dart';
 import 'package:crocurry/views/screens/product/views/components/unit_price.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,6 @@ class ProductInfo extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            
             children: [
               Expanded(
                 child: UnitPrice(
@@ -63,33 +63,38 @@ class ProductInfo extends StatelessWidget {
               BlocBuilder<QuantityBloc, QuantityState>(
                   // buildWhen: (previous, current) => current is UIUpdateState || current is DecrementQty || current is IncrementQty,
                   builder: (context, state) {
-                    return ProductQuantity(
-                      numOfItem: productModel.selectedQuantity,
-                      onIncrement: () {
-                        if (productModel.selectedQuantity ==
-                            productModel.qtyInStock!.toInt()) {
-                          CustomToast.showErrorMessage(
-                              context: context,
-                              message:
-                                  'Only ${productModel.qtyInStock!} item(s) available');
-                        } else {
-                          if (productModel.qtyInStock!.toInt() >
-                              productModel.selectedQuantity) {
-                            productModel.selectedQuantity++;
-                            // context.read<QuantityBloc>().add(UpdateUI());
-                            context.read<QuantityBloc>().add(IncrementQty());
-                          }
-                        }
-                      },
-                      onDecrement: () {
-                        if (productModel.selectedQuantity > 1) {
-                          productModel.selectedQuantity--;
-                          // context.read<QuantityBloc>().add(UpdateUI());
-                          context.read<QuantityBloc>().add(DecrementQty());
-                        }
-                      },
-                    );
-                  }),
+                return ProductQuantity(
+                  numOfItem: productModel.quantityInCart,
+                  onIncrement: () {
+                    if (productModel.quantityInCart ==
+                        productModel.qtyInStock!.toInt()) {
+                      CustomToast.showErrorMessage(
+                          context: context,
+                          message:
+                              'Only ${productModel.qtyInStock!} item(s) available');
+                    } else {
+                      if (productModel.qtyInStock!.toInt() >
+                          productModel.quantityInCart) {
+                        // productModel.quantityInCart++;
+                        // context.read<QuantityBloc>().add(UpdateUI());
+                        context
+                            .read<CartProvider>()
+                            .increaseQty(productData: productModel);
+                        context.read<QuantityBloc>().add(IncrementQty());
+                      }
+                    }
+                  },
+                  onDecrement: () {
+                    if (productModel.quantityInCart >= 1) {
+                      // context.read<QuantityBloc>().add(UpdateUI());
+                      context
+                          .read<CartProvider>()
+                          .decreaseQty(productData: productModel);
+                      context.read<QuantityBloc>().add(DecrementQty());
+                    }
+                  },
+                );
+              }),
             ],
           ),
           const SizedBox(height: defaultPadding),

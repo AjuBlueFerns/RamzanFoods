@@ -10,9 +10,10 @@ import 'package:flutter/material.dart';
 class CartRepositoryImpl extends CartRepository {
   final CartRemoteDatasourceImpl remoteDatasource;
   final CartLocalDatasourceImpl localDatasource;
+
   CartRepositoryImpl(this.remoteDatasource, this.localDatasource);
   @override
-  Future<(CartModel?, Exception?)> addToCart(int qty, String productId) async {
+  Future<(CartModel?, Exception?)> addToCart(int qty, String productId,) async {
     CartModel? cart;
     Exception? exc;
     try {
@@ -46,7 +47,6 @@ class CartRepositoryImpl extends CartRepository {
       if (cartId.isNotEmpty) {
         var result = await remoteDatasource.viewCart(cartId);
         debugPrint(" ##### here#");
-
         if (result.$1 != null) {
           debugPrint(" ##### here");
           cart = result.$1;
@@ -60,14 +60,14 @@ class CartRepositoryImpl extends CartRepository {
   }
 
   @override
-  Future updateQtyInCart(String cartId, String productId, String cartItemNumber,
-      int newQty) async {
+  Future updateQtyInCart(
+      String productId, String cartItemNumber, int newQty) async {
     try {
       var cartId = await getCartId();
       if (cartId.isNotEmpty) {
-        var result = await remoteDatasource.updateQtyInCart(
+       await remoteDatasource.updateQtyInCart(
             cartId, productId, cartItemNumber, newQty);
-        if (result.$1 != null) {}
+        // if (result.$1 != null) {}
       }
     } catch (err) {
       debugPrint(" error @updateQtyInCart $e");

@@ -8,7 +8,7 @@ class FetchProducts extends ProductEvent {
   final String? subCategoryId;
   final String key;
   final String? searchStr;
-  final String? filterKey;
+  final String? filterKey, cartId;
   final int? index;
   FetchProducts({
     // this.params,
@@ -20,5 +20,6 @@ class FetchProducts extends ProductEvent {
     this.subCategoryId,
     this.filterKey,
     this.searchStr,
+    this.cartId,
   });
 }

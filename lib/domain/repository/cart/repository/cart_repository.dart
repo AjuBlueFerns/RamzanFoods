@@ -6,7 +6,7 @@ abstract class CartRepository {
   Future removeFromCart(String productId, String cartItemNumber);
   Future<(CartDetailsModel?, Exception?)> viewCart();
   Future updateQtyInCart(
-    String cartId,
+    // String cartId,
     String productId,
     String cartItemNumber,
     int newQty,

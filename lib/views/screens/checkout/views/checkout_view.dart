@@ -18,7 +18,7 @@ class _CheckoutViewState extends State<CheckoutView> {
     super.dispose();
   }
 
-  checkStatus() async {
+  Future<void> checkStatus() async {
     var response = await locator<CheckOrderStatus>().call(widget.cartId);
     if (response.$1 != null) {
       debugPrint("### response ${response.$1!}");

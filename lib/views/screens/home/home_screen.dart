@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  checkLoggedIn(BuildContext context) async {
+  Future<void> checkLoggedIn(BuildContext context) async {
     var isLoggedIn = await locator<CheckLoggedIn>().call();
     if (context.mounted) {
       if (isLoggedIn) {
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  checkNetwork(BuildContext context) async {
+  Future<void> checkNetwork(BuildContext context) async {
     var isConnected = (await locator<CheckConnectivity>().call());
     if (!isConnected && context.mounted) {
       CommonDialogs.showAlertDialog(
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  updateCategories(BuildContext context) async {
+  Future<void> updateCategories(BuildContext context) async {
     final details = await locator<GetProductCategories>().call();
     var list = details.$1 ?? [];
     if (context.mounted) {

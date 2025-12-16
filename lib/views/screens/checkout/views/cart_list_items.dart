@@ -60,12 +60,12 @@ class CartListItems extends StatelessWidget {
                 child: NetworkImageWithLoader(item.productImage!),
               ),
             ),
-            const SizedBox(width: defaultPadding /2),
+            const SizedBox(width: defaultPadding / 2),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-            // const SizedBox(height: defaultPadding /4),
+                  // const SizedBox(height: defaultPadding /4),
 
                   Text(
                     item.productName!.trim(),
@@ -93,20 +93,16 @@ class CartListItems extends StatelessWidget {
                         numOfItem: int.parse(item.quantity!),
                         onIncrement: () async {
                           var newQty = int.parse(item.quantity!) + 1;
-
-                          await locator<UpdateQty>().call(item.cartId!,
+                          await locator<UpdateQty>().call(
                               item.productId!, item.cartItemNumber!, newQty);
                           if (context.mounted) {
-                          
                             context.read<CartBloc>().add(UpdateItemQty(
                                 item.productId!,
                                 newQty.toString(),
                                 item.price!));
                           }
                         },
-                        onDecrement: () async {
-                          await deleteOrDecrement(context, item);
-                        },
+                        onDecrement: () async => await deleteOrDecrement(context, item),
                       ),
                       const Spacer(),
                       PriceText(
@@ -134,7 +130,7 @@ class CartListItems extends StatelessWidget {
     var unitPrice = item.price;
     if (int.parse(item.quantity!) > 1) {
       await locator<UpdateQty>()
-          .call(item.cartId!, item.productId!, item.cartItemNumber!, newQty);
+          .call(item.productId!, item.cartItemNumber!, newQty);
       if (context.mounted) {
         context
             .read<CartBloc>()
@@ -145,7 +141,7 @@ class CartListItems extends StatelessWidget {
           .call(item.productId!, item.cartItemNumber!);
       if (context.mounted) {
         context.read<CartBloc>().add(RemoveItem(item.productId!));
-        // context.read<CartBloc>().add(FetchAndUpdateCartdetails());
+        context.read<CartBloc>().add(FetchAndUpdateCartdetails());
       }
       if (context.mounted) {
         CustomToast.showInfoMessage(context: context, message: 'Item deleted!');

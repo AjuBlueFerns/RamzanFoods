@@ -4,7 +4,7 @@ class RemoveBookmark {
   final ProductRepositoryImpl repository;
   RemoveBookmark(this.repository);
 
-  call(int id) {
+  void call(int id) {
     repository.removeFromBookmark(id);
   }
 }

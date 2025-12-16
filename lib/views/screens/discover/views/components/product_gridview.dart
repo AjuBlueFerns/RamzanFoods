@@ -22,7 +22,7 @@ class ProductGridview extends StatefulWidget {
 }
 
 class _ProductGridviewState extends State<ProductGridview> {
-  fetchProducts() async {
+  Future<void> fetchProducts() async {
     var params = context.read<FilterBloc>().state.getParams();
     context.read<AllProductsBloc>().add(FetchAllProductsWithParams(
           params: params,

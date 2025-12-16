@@ -1,4 +1,3 @@
-import 'package:crocurry/data/models/product_details_model.dart';
 import 'package:crocurry/data/models/product_model.dart';
 import 'package:crocurry/data/models/user_model.dart';
 import 'package:crocurry/domain/use_cases/auth/get_otp.dart';
@@ -14,12 +13,15 @@ import 'package:crocurry/utils/constants.dart';
 import 'package:crocurry/utils/custom_toast.dart';
 import 'package:crocurry/utils/extensions/context_extensions.dart';
 import 'package:crocurry/utils/extensions/string_extensions.dart';
+import 'package:crocurry/utils/helper.dart';
 import 'package:crocurry/utils/locator.dart';
 import 'package:crocurry/utils/route/route_constants.dart';
 import 'package:crocurry/views/bloc/auth/auth_bloc.dart';
 import 'package:crocurry/views/bloc/auth/auth_event.dart';
 import 'package:crocurry/views/bloc/cart/cart_bloc.dart';
 import 'package:crocurry/views/bloc/cart/cart_event.dart';
+import 'package:crocurry/views/bloc/products/product_bloc.dart';
+import 'package:crocurry/views/bloc/products/product_event.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_bloc.dart';
 import 'package:crocurry/views/bloc/quantity/quantity_event.dart';
 import 'package:crocurry/views/bloc/screen/screen_bloc.dart';
@@ -39,11 +41,16 @@ class CommonFunctions {
     Navigator.pushNamed(context, productDetailsScreenRoute, arguments: product);
   }
 
-  static Future<bool> checkIfItemCanBeAdded(
-      {required BuildContext context,
-      required ProductDetailsModel product,
-      required int stockQty,
-      required int newQty}) async {
+  static Future<bool> checkIfItemCanBeAdded({
+    required BuildContext context,
+    // required ProductDetailsModel product,
+    required int stockQty,
+    required int newQty,
+    required String productId,
+    required String productPrice,
+    ProductModel? productData,
+    bool? showSnack = true,
+  }) async {
     var status = false;
     var itemPresentInCart = false;
     context.read<QuantityBloc>().add(AddingCartStatus(true));
@@ -52,7 +59,7 @@ class CommonFunctions {
       CustomToast.showErrorMessage(
         context: context,
         message:
-            'Error: You can only add up to ${product.qtyInStock!} items of this product. Please adjust your quantity! ',
+            'Error: You can only add up to $stockQty items of this product. Please adjust your quantity! ',
       );
       context.read<QuantityBloc>().add(AddingCartStatus(false));
 
@@ -66,12 +73,14 @@ class CommonFunctions {
 
         if (cartItems != null && cartItems.isNotEmpty) {
           itemPresentInCart =
-              cartItems.indexWhere((e) => e.productId! == product.productId!) !=
-                  -1;
+              cartItems.indexWhere((e) => e.productId! == productId) != -1;
 
           if (itemPresentInCart) {
-            var index =
-                cartItems.indexWhere((e) => e.productId! == product.productId!);
+            var index = cartItems.indexWhere((e) => e.productId! == productId);
+            if (productData != null) {
+              productData.cartItemNumber = cartItems[index].cartItemNumber;
+            }
+
             var cartQty = cartItems[index].quantity;
             debugPrint("### cartQty : $cartQty");
             debugPrint("### stockQty : $stockQty");
@@ -80,13 +89,14 @@ class CommonFunctions {
                 CustomToast.showErrorMessage(
                   context: context,
                   action: SnackBarAction(
-                      label: 'View Cart',
-                      onPressed: () {
-                        Navigator.pushNamed(context, cartScreenRoute,
-                            arguments: true);
-                      }),
+                    label: 'View Cart',
+                    onPressed: () {
+                      Navigator.pushNamed(context, cartScreenRoute,
+                          arguments: true);
+                    },
+                  ),
                   message:
-                      'Error: You can only add up to ${product.qtyInStock!} items of this product. Please adjust your quantity! ',
+                      'Error: You can only add up to $stockQty items of this product. Please adjust your quantity! ',
                 );
               }
               status = false;
@@ -102,26 +112,32 @@ class CommonFunctions {
       status = true;
       if (status) {
         await locator<AddToCart>()
-            .call(newQty, product.productId!)
-            .then((_) async {
+            .call(newQty, productId)
+            .then((newCartData) async {
           if (context.mounted) {
             var value = itemPresentInCart
                 ? cartResponse.$1!.items!.length
                 : cartResponse.$1 == null
                     ? 1
                     : cartResponse.$1!.items!.length + 1;
-            context.read<CartBloc>().add(UpdateItemQty(
-                product.productId!, newQty.toString(), product.price!));
+            context
+                .read<CartBloc>()
+                .add(UpdateItemQty(productId, newQty.toString(), productPrice));
             context.read<CartBloc>().add(UpdateCartCount(value));
-            CustomToast.showSuccessMessage(
-                action: SnackBarAction(
-                    label: 'View Cart',
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, cartScreenRoute,
-                          arguments: true);
-                    }),
-                context: context,
-                message: 'Item added to cart!');
+            if (productData != null) {
+              productData.cartItemNumber = newCartData.$1!.cartItemNumber;
+            }
+            if (showSnack!) {
+              CustomToast.showSuccessMessage(
+                  action: SnackBarAction(
+                      label: 'View Cart',
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, cartScreenRoute,
+                            arguments: true);
+                      }),
+                  context: context,
+                  message: 'Item added to cart!');
+            }
           }
           if (context.mounted) {
             context.read<QuantityBloc>().add(AddingCartStatus(false));
@@ -168,6 +184,19 @@ class CommonFunctions {
       url += "&retry_payment=true";
     } else {
       await locator<ClearCartId>().call();
+      Helper.context!.read<ProductBloc>().add(FetchProducts(
+            index: 0,
+            key: 'pdt-list2',
+            pageNumber: '1',
+            searchStr: "featured",
+            filterKey: null,
+            cartId: null,
+            // params: {
+            //   'key': 'pdt-list2',
+            //   'searchStr': "featured",
+            // },
+          ));
+      // Helper.context!.read<ProductBloc>().add(event)
     }
 
     if (!context.mounted) {
@@ -235,7 +264,7 @@ class CommonFunctions {
     }
   }
 
-  static navigateToHome(BuildContext context,
+  static Future<void> navigateToHome(BuildContext context,
       {int screenIndexToUpdate = 0}) async {
     context
         .read<ScreenBloc>()
@@ -244,7 +273,7 @@ class CommonFunctions {
         context, homeScreenRoute, (Route<dynamic> route) => false);
   }
 
-  static updateUserDetails(
+  static Future<void> updateUserDetails(
     BuildContext context,
     UserModel? editingDetails,
   ) async {

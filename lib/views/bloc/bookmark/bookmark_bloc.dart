@@ -15,7 +15,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     on(getList);
   }
 
-  addBookmark(AddProductToBookmark event, Emitter<BookmarkState> emit) {
+  void addBookmark(AddProductToBookmark event, Emitter<BookmarkState> emit) {
     locator<AddBookmark>().call(event.product);
     List<ProductModel> newList = List.from(state.products);
     debugPrint("### newlist length b4 :${newList.length}");
@@ -25,7 +25,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     emit(state.copyWith(list: newList));
   }
 
-  removeBookmark(RemoveProductFromBookmark event, Emitter<BookmarkState> emit) {
+  void removeBookmark(RemoveProductFromBookmark event, Emitter<BookmarkState> emit) {
     locator<RemoveBookmark>().call(event.product.id);
     List<ProductModel> newList = List.from(state.products);
 

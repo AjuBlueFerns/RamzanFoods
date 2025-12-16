@@ -1,15 +1,21 @@
 import 'dart:convert';
 
+import 'package:crocurry/data/data_sources/data_sources.dart';
 import 'package:crocurry/data/models/cart_details_model.dart';
 import 'package:crocurry/data/models/cart_model.dart';
+import 'package:crocurry/domain/use_cases/cart/clear_cart_id.dart';
 import 'package:crocurry/utils/constants.dart';
+import 'package:crocurry/utils/helper.dart';
+import 'package:crocurry/utils/locator.dart';
+import 'package:crocurry/views/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 /// class for performing cart functions using the api
 abstract class CartRemoteDatasource {
-/// adds the product with product id with specific quantity 
-/// and cartId to the cart  
+  /// adds the product with product id with specific quantity
+  /// and cartId to the cart
   Future<(CartModel?, Exception?)> addToCart(
     int qty,
     String productId,
@@ -81,7 +87,11 @@ class CartRemoteDatasourceImpl extends CartRemoteDatasource {
     debugPrint("removeFromCart url : $uri");
     var response = await http.get(uri);
     if (response.statusCode == 200) {
+      await locator<ClearCartId>().call();
       debugPrint("removeFromCart resp :${response.body}");
+      Helper.context!
+          .read<CartProvider>()
+          .updateProductQuantity(productId: productId, qty: '0');
       // return (CartModel.fromJson(jsonDecode(response.body)), null);
     } else {
       return (null, Exception('Something went wrong'));
@@ -101,8 +111,10 @@ class CartRemoteDatasourceImpl extends CartRemoteDatasource {
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       debugPrint("viewCart resp :${response.body}");
-
-      return (CartDetailsModel.fromJson(jsonDecode(response.body)), null);
+      CartDetailsModel cartDetailsModel =
+          CartDetailsModel.fromJson(jsonDecode(response.body));
+      DataSources().setCartData(newData: cartDetailsModel);
+      return (cartDetailsModel, null);
     } else {
       return (null, Exception('Something went wrong'));
     }
@@ -143,6 +155,8 @@ class CartRemoteDatasourceImpl extends CartRemoteDatasource {
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       debugPrint("checkOrderStatus resp :${response.body}");
+
+      Helper.showSnack(message: response.body);
       var jsonBody = jsonDecode(response.body) as Map;
       return (jsonBody['status'] as bool, null);
     } else {
@@ -150,3 +164,4 @@ class CartRemoteDatasourceImpl extends CartRemoteDatasource {
     }
   }
 }
+  
